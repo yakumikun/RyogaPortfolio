@@ -10,7 +10,14 @@ export default function Works() {
       <div className="pt-20">
         <h1 className="text-center font-bold text-2xl">WORKS</h1>
         <Link href="/">
-          <p className="text-right pr-4">HOME</p>
+          <div className="absolute top-10 right-4 w-6 h-6 xl:w-12 xl:h-12">
+            <Image
+              src="/home.svg"
+              alt=""
+              sizes="(max-width-640px) 24px,(max-width-1200px) 48px"
+              fill
+            />
+          </div>
         </Link>
         <div>
           {WorksContents.map((work) => (
@@ -25,9 +32,12 @@ export default function Works() {
                 />
               </div>
               <div className="xl:text-xl">
-                <h2 className="font-bold">{work.title}<br />「{work.name}」</h2>
+                <h2 className="font-bold">
+                  {work.title}
+                  <br />「{work.name}」
+                </h2>
               </div>
-              <ModalButton content={work.description} />
+              <ModalButton content={work.description} domain={work.url ?? ""} />
             </div>
           ))}
         </div>

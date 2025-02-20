@@ -5,18 +5,33 @@ import Image from "next/image";
 import Link from "next/link";
 import Splash from "../app/components/SplashScreen";
 
+//スプラッシュスクリーンの表示を管理
 const SplashScreen: React.FC = () => {
-  const [splash, setSplash] = useState(true);
+  const [splash, setSplash] = useState(false);
 
   useEffect(() => {
+    const splashShown = localStorage.getItem("splashShown");
+
+    if (!splashShown) {
+      setSplash(true);
     const timer = setTimeout(() => {
       setSplash(false);
+      localStorage.setItem("splashShown", "true");
     }, 5000);
 
     return () => clearTimeout(timer);
+  }
   }, []);
 
-  return <div>{splash ? <Splash /> : <Home />}</div>;
+  return (
+    <div>
+      {splash ? (
+        <Splash />
+      ) : (
+        <Home />
+      )}
+    </div>
+  );
 };
 
 const Home: React.FC = () => {
