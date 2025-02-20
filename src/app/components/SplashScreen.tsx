@@ -8,7 +8,7 @@ export default function Splash() {
         <div>
           <div className="flex justify-center">
             <p className="absolute z-20 text-white font-extrabold text-3xl top-[40%] animate-appear xl:text-6xl">
-              RYOGA'S
+              RYOGA&apos;S
               <br />
               PORTFOLIO
             </p>

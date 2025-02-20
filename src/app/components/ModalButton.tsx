@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import Modal from "./Modal";
 
 type Props = {

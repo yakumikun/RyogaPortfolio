@@ -5,8 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 import { Pagination, Navigation, EffectCoverflow,Autoplay } from "swiper/modules";
 
-SwiperCore.use([Pagination, Navigation, EffectCoverflow, Autoplay]);
-
 const images = [
     "/skillIcons/html-5.svg",
     "/skillIcons/css-3.svg",
@@ -29,6 +27,7 @@ const images = [
 ];
 
 const Carousel = () => {
+    SwiperCore.use([Pagination, Navigation, EffectCoverflow, Autoplay]);
     return (
         <Swiper
             slidesPerView={3}
